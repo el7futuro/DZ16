@@ -1,12 +1,8 @@
 from config import app
-from utils import *
+from views import users_blueprint
+from utils import init_db
 
-def init_db():
-    db.drop_all()  # удаляем все таблицы
-    db.create_all()  # создаем их заново и отправляем данные из файлов
-    load_users('data/users.json')
-    load_orders('data/orders.json')
-    load_offers('data/offers.json')
+app.register_blueprint(users_blueprint)
 
 if __name__ == '__main__':
     init_db()

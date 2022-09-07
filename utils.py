@@ -42,12 +42,12 @@ def load_orders(filename):
     db.session.commit()
 
 
-# def init_db():
-#     db.drop_all()  # удаляем все таблицы
-#     db.create_all()  # создаем их заново и отправляем данные из файлов
-#     load_users('data/users.json')
-#     load_orders('data/orders.json')
-#     load_offers('data/offers.json')
+def init_db():
+    db.drop_all()  # удаляем все таблицы
+    db.create_all()  # создаем их заново и отправляем данные из файлов
+    load_users('data/users.json')
+    load_orders('data/orders.json')
+    load_offers('data/offers.json')
 
 # init_db()
 # print(User.query.get(1).users_to_dict())
